@@ -1,19 +1,13 @@
 import { findEvent } from "./findEvent.js";
 import { checkChatType } from "./checkChatType.js";
 
-const log = (...args) => {
-  if (global.cacheLogs) {
-    global.cacheLogs.push(args);
-  }
-  console.log("[移除气泡装扮]", ...args);
-};
+const log =
+  typeof global.Logs === "function"
+    ? new global.Logs("移除气泡装扮")
+    : (...args) => {
+        console.log("[移除气泡装扮]", ...args);
+      };
 
-/**
- * 根据配置替换给定参数中的小程序卡片。
- *
- * @param {Array} args - 包含小程序卡片的参数数组。
- * @return {void} 此函数不返回任何值。
- */
 function deleteBubble(...args) {
   // 接收到获取历史消息列表
   const msgList = args[2]?.msgList;
@@ -41,12 +35,6 @@ function deleteBubble(...args) {
   }
 }
 
-/**
- * 将给定消息列表中的小程序卡片替换为 replaceArk 函数的结果。
- *
- * @param {Array} msgList - 包含小程序卡片的消息对象数组。
- * @return {void} 此函数不返回任何内容。
- */
 function deleteBubbleSkin(msgList) {
   msgList.forEach((msgItem) => {
     if (msgItem.msgAttrs.get(0)?.vasMsgInfo?.bubbleInfo) {
@@ -60,4 +48,4 @@ function deleteBubbleSkin(msgList) {
   });
 }
 
-export { deleteBubble };
+export { deleteBubble, log };
