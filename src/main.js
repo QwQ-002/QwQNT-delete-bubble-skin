@@ -8,5 +8,5 @@ try {
     throw new Error("未找到 IpcInterceptor，请安装前置插件 QWQNT-IpcInterceptor");
   }
 } catch (err) {
-  log("出现错误：" + err.message);
+  log("出现错误：", err);
 }
