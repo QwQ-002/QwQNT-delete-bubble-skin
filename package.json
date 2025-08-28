@@ -3,7 +3,7 @@
   "name": "delete-bubble-skin",
   "main": "./dist/main.js",
   "description": "删除气泡皮肤",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "build": "node esbuild.config.mjs"
   },
