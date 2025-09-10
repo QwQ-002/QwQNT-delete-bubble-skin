@@ -3,7 +3,7 @@
   "name": "delete-bubble-skin",
   "main": "./dist/main.js",
   "description": "删除气泡皮肤",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "build": "node esbuild.config.mjs"
   },
@@ -18,7 +18,7 @@
     "name": "删除气泡皮肤",
     "dependencies": {
       "ipc_interceptor": "^1.0.0",
-      "ipc_logger?": "^1.0.0"
+      "ipc_logger?": "^1.0.1"
     }
   },
   "dependencies": {
